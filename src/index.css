@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 100% 50%;
+    --foreground: 60 100% 50%;
+    --card: 300 100% 50%;
+    --card-foreground: 120 100% 50%;
+    --popover: 0 100% 50%;
+    --popover-foreground: 60 100% 50%;
+    --primary: 120 100% 50%;
+    --primary-foreground: 300 100% 50%;
+    --secondary: 60 100% 50%;
+    --secondary-foreground: 0 100% 50%;
+    --muted: 300 100% 50%;
+    --muted-foreground: 120 100% 50%;
+    --accent: 60 100% 50%;
+    --accent-foreground: 0 100% 50%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 60 100% 50%;
+    --border: 120 100% 50%;
+    --input: 300 100% 50%;
+    --ring: 60 100% 50%;
+    --radius: 0px;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    border: 8px dashed hsl(var(--border));
+    animation: rainbow-border 0.5s linear infinite;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Papyrus', 'Comic Sans MS', fantasy !important;
+  }
+
+  button, input, select, textarea {
+    font-family: 'Courier New', monospace !important;
+  }
+
+  body {
+    font-size: 28px;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><text y='32' font-size='32'>🤡</text></svg>") 16 16, auto;
+    text-shadow:
+      3px 3px 0 #ff0000,
+      -3px -3px 0 #00ffff,
+      3px -3px 0 #00ff00,
+      -3px 3px 0 #ff00ff,
+      0px 5px 0 #ffff00,
+      0px -5px 0 #ff8800;
+    overflow-x: hidden;
+  }
+}
+
+@keyframes rainbow-border {
+  0% { border-color: #ff0000; }
+  16% { border-color: #ff8800; }
+  33% { border-color: #ffff00; }
+  50% { border-color: #00ff00; }
+  66% { border-color: #0088ff; }
+  83% { border-color: #ff00ff; }
+  100% { border-color: #ff0000; }
+}
+
+@keyframes blink-text {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes progress-fake {
+  0% { width: 0%; }
+  95% { width: 99%; }
+  100% { width: 0%; }
+}
+
+.blink {
+  animation: blink-text 0.3s step-end infinite;
+}
+
+.marquee-text {
+  animation: marquee 5s linear infinite;
+  white-space: nowrap;
+}
+
+.progress-bar-fake {
+  animation: progress-fake 4s ease-in-out infinite;
+}
+
+.important-notice {
+  color: #ffff00;
+  background: white;
+}
+
+.word-art {
+  text-shadow:
+    4px 4px 0 #ff0000,
+    -4px -4px 0 #00ff00,
+    4px -4px 0 #0000ff,
+    -4px 4px 0 #ff00ff,
+    8px 0 0 #ffff00;
+  font-size: 64px;
+}
